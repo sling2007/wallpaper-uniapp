@@ -39,6 +39,41 @@
 				<uni-icons type="right" size="20"></uni-icons>
 			</view>
 		</view>
+		
+		<view class="select">
+			<common-title>
+				<template #name>每日推荐</template>
+				<template #custom>
+					<view class="date">
+						<uni-icons type="calendar" size="18" color="green"></uni-icons>
+						<view class="text">
+							<uni-dateformat :date="Date.now()" format="dd日"></uni-dateformat>
+						</view>
+					</view>
+				</template>
+			</common-title>
+			<view class="content">				
+				<scroll-view scroll-x>
+					<view class="box" v-for="item in 8">
+						<image src="../../common/images/preview_small.webp" mode="aspectFill"></image>
+					</view>
+				</scroll-view>
+			</view>
+		</view>
+		
+		<view class="theme">
+			<common-title>
+				<template #name>主题</template>
+				<template #custom>
+					<navigator url="" open-type="reLaunch" class="more">MORE</navigator>
+				</template>
+			</common-title>
+			<view class="content">
+				<theme-item  v-for="item in 8"></theme-item>
+				<theme-item  :isMore="true"></theme-item>
+			</view>
+		</view>
+		
 	</view>
 </template>
 
@@ -68,8 +103,8 @@
 			}
 		}
 		.notice{
+			
 			width: 750rpx;
-			height: 34rpx;
 			height: 80rpx;
 			line-height: 80rpx;
 			background: #f9f9f9;
@@ -105,6 +140,60 @@
 			}
 		}
 		
+		.select{
+			width: 750rpx;
+			.date{
+				display: flex;
+				align-items: center;
+				color: seagreen;
+				.text{
+					margin-left: 5px;
+				}
+			}
+			
+			.content{
+				width: 720rpx;
+				height: 430rpx;
+				padding: 0 30rpx;
+				scroll-view{
+					width: 690rpx;
+					height: 100%;
+					white-space: nowrap;
+					.box{
+						height: 100%;
+						width: 200rpx;
+						display: inline-block;
+						margin-right: 15rpx;
+						image{
+							width: 100%;
+							height: 100%;
+							border-radius: 10rpx;
+						}
+					}
+					.box:last-child{
+						margin-right: 0rpx;
+					}
+				}
+			}
+		}
+	
+		.theme{
+			width: 750rpx;
+			padding: 50rpx 0;
+			.more{
+				display: flex;
+				align-items: center;
+				color: seagreen;
+				font-size: 18rpx;
+			}
+			.content{
+				margin-top:30rpx;
+				padding:0 30rpx;
+				display: grid;
+				gap:15rpx;
+				grid-template-columns: repeat(3,1fr);
+			}
+		}
 	}
 	
 </style>
