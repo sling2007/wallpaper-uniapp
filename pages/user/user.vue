@@ -11,29 +11,34 @@
 			
 		<view class="section">
 			<view class="list">
-				<navigator url="/pages/classlist/classlist" class="row">
-					<view class="left">
-						<uni-icons type="download-filled" size="20"  ></uni-icons>
-						<view class="text">我的下载</view>
-					</view>
-					<view class="right">
-						<view class="text">666</view>
-						<uni-icons type="right" size="15" ></uni-icons>
+				<navigator url="/pages/classlist/classlist" >
+					<view class="row">
+						<view class="left">
+							<uni-icons type="download-filled" size="20"  ></uni-icons>
+							<view class="text">我的下载</view>
+						</view>
+						<view class="right">
+							<view class="text">666</view>
+							<uni-icons type="right" size="15" ></uni-icons>
+						</view>
 					</view>
 				</navigator>
 				
-				<view url="" class="row">
-					<view class="left">
-						<uni-icons type="star-filled" size="20" ></uni-icons>
-						<view class="text">我的评分</view>
+				<navigator url="/pages/classlist/classlist" >
+					<view  class="row">
+						<view class="left">
+							<uni-icons type="star-filled" size="20" ></uni-icons>
+							<view class="text">我的评分</view>
+						</view>
+						<view class="right">
+							<view class="text">888</view>
+							<uni-icons type="right" size="15" ></uni-icons>
+						</view>
 					</view>
-					<view class="right">
-						<view class="text">888</view>
-						<uni-icons type="right" size="15" ></uni-icons>
-					</view>
-				</view>
+				</navigator>
 				
-				<view url="" class="row">
+				
+				<view  class="row">
 					<view class="left">
 						<uni-icons type="chatboxes-filled" size="20"  ></uni-icons>
 						<view class="text">联系客服</view>
@@ -54,7 +59,7 @@
 		
 		<view class="section">
 			<view class="list">
-				<view url="" class="row">
+				<view  class="row">
 					<view class="left">
 						<uni-icons type="notification-filled" size="20" ></uni-icons>
 						<view class="text">订阅更新</view>
@@ -65,7 +70,7 @@
 					</view>
 				</view>
 				
-				<view url="" class="row">
+				<view  class="row">
 					<view class="left">
 						<uni-icons type="flag-filled" size="20" ></uni-icons>
 						<view class="text">常见问题</view>

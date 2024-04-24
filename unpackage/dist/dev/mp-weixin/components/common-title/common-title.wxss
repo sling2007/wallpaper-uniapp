@@ -30,5 +30,6 @@
   padding: 0 30rpx;
 }
 .common-title .name.data-v-43a5d97b {
-  font-size: 40rpx;
+  font-size: 30rpx;
+  color: #28B389;
 }

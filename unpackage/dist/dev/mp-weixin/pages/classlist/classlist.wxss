@@ -23,12 +23,17 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-view swiper swiper-item{
-	box-sizing: border-box;
+.classlist .content.data-v-bd381383 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rpx;
+  padding: 5rpx;
 }
-.pageBg{
-	background: 
-	linear-gradient(to bottom,transparent,#fff 400rpx),
-	linear-gradient(to right,#beecd8 20%,#F4E2D8);
-	min-height: 80vh;
-}page{--status-bar-height:25px;--top-window-height:0px;--window-top:0px;--window-bottom:0px;--window-left:0px;--window-right:0px;--window-magin:0px}[data-c-h="true"]{display: none !important;}
+.classlist .content .item.data-v-bd381383 {
+  height: 440rpx;
+}
+.classlist .content .item image.data-v-bd381383 {
+  width: 100%;
+  height: 100%;
+  display: block;
+}

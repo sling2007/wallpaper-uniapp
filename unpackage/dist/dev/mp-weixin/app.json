@@ -2,11 +2,12 @@
   "pages": [
     "pages/index/index",
     "pages/classify/classify",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/classlist/classlist"
   ],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "咸虾米壁纸",
+    "navigationBarTitleText": "壁纸",
     "navigationBarBackgroundColor": "#fff",
     "backgroundColor": "#F8F8F8"
   },

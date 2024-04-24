@@ -31,8 +31,7 @@ function _sfc_render(_ctx, _cache) {
     }),
     f: common_vendor.p({
       type: "calendar",
-      size: "18",
-      color: "green"
+      size: "18"
     }),
     g: common_vendor.p({
       date: Date.now(),
