@@ -1,6 +1,6 @@
 <template>
 	
-	<view class="classifyPage">
+	<view class="classifyPage pageBg">
 		
 		<view class="classify">
 			<theme-item  v-for="item in 16"></theme-item>

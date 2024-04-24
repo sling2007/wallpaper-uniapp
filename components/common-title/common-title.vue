@@ -20,7 +20,8 @@
 		align-items: center;
 		padding:0 30rpx;
 		.name{
-			font-size: 40rpx
+			font-size: 30rpx;
+			color: $brand-theme-color;
 		}
 	}
 </style>

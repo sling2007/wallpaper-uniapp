@@ -1,5 +1,5 @@
 <template>
-	<view class="homeLayout">
+	<view class="homeLayout pageBg">
 		<view class="banner">
 			<swiper :indicator-dots="true" :autoplay="true" :interval="2000"  circular autoplay 
 			indicator-color="#c0c0c0" indicator-active-color="#fff">
@@ -45,7 +45,7 @@
 				<template #name>每日推荐</template>
 				<template #custom>
 					<view class="date">
-						<uni-icons type="calendar" size="18" color="green"></uni-icons>
+						<uni-icons type="calendar" size="18"></uni-icons>
 						<view class="text">
 							<uni-dateformat :date="Date.now()" format="dd日"></uni-dateformat>
 						</view>
@@ -65,7 +65,7 @@
 			<common-title>
 				<template #name>主题</template>
 				<template #custom>
-					<navigator url="" open-type="reLaunch" class="more">MORE</navigator>
+					<navigator url="/pages/classify/classify" open-type="reLaunch" class="more">MORE+</navigator>
 				</template>
 			</common-title>
 			<view class="content">
@@ -87,6 +87,7 @@
 		.banner{
 			width: 750rpx;
 			height: 340rpx;
+			padding: 50rpx 0 0 0;
 			swiper{
 				height: 100%;
 				width: 100%;
@@ -103,12 +104,11 @@
 			}
 		}
 		.notice{
-			
 			width: 750rpx;
 			height: 80rpx;
 			line-height: 80rpx;
 			background: #f9f9f9;
-			margin: 0 auto;
+			margin: 15rpx auto;
 			border-radius: 80rpx;
 			display: flex;
 			.left{
@@ -116,6 +116,16 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
+				:deep(){
+					.uni-icons{
+						color: $brand-theme-color !important;
+					}
+				}			
+				text{
+					color: $brand-theme-color;
+					font-weight: 600;
+					font-size: 28rpx;
+				}
 			}
 			.center{
 				flex:1;
@@ -145,9 +155,14 @@
 			.date{
 				display: flex;
 				align-items: center;
-				color: seagreen;
+				:deep(){
+					.uni-icons{
+						color:$brand-theme-color !important;
+					}
+				}
 				.text{
 					margin-left: 5px;
+					color: $brand-theme-color;
 				}
 			}
 			
@@ -183,8 +198,8 @@
 			.more{
 				display: flex;
 				align-items: center;
-				color: seagreen;
-				font-size: 18rpx;
+				color: $brand-theme-color;
+				font-size: 20rpx;
 			}
 			.content{
 				margin-top:30rpx;
