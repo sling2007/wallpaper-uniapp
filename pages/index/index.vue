@@ -1,17 +1,16 @@
 <template>
 	<view class="homeLayout pageBg">
+		
+		<custom-nav-bar title="推荐"></custom-nav-bar>
+		
+		
 		<view class="banner">
 			<swiper :indicator-dots="true" :autoplay="true" :interval="2000"  circular autoplay 
 			indicator-color="#c0c0c0" indicator-active-color="#fff">
-				<swiper-item >
-					<image src="../../common/images/banner1.jpg" mode="aspectFill"></image>
+				<swiper-item v-for="item in bannerList" :key="item._id">
+					<image :src="item.picurl" mode="aspectFill"></image>
 				</swiper-item>
-				<swiper-item >
-					<image src="../../common/images/banner2.jpg" mode="aspectFill"></image>
-				</swiper-item>
-				<swiper-item >
-					<image src="../../common/images/banner3.jpg" mode="aspectFill"></image>
-				</swiper-item>
+				
 			</swiper>
 		</view>
 		
@@ -23,15 +22,11 @@
 				</text>
 			</view>
 			<view class="center">
-				<swiper   autoplay  :interval="1500" :duration="1500" circular vertical>
-					<swiper-item>
-						公告1111
-					</swiper-item>
-					<swiper-item>
-						哈哈哈呵呵呵嘻嘻嘻咩咩咩啊啊啊哼哼哼哦哦哦啦啦啦
-					</swiper-item>
-					<swiper-item>
-						Attention 2222222
+				<swiper autoplay :interval="1500" :duration="1500" circular vertical>
+					<swiper-item v-for="item in noticeList" :key="item._id">
+						<navigator url="/pages/notice/detail">
+							{{ item.title }}
+						</navigator>
 					</swiper-item>
 				</swiper>
 			</view>
@@ -54,8 +49,8 @@
 			</common-title>
 			<view class="content">				
 				<scroll-view scroll-x>
-					<view class="box" v-for="item in 8">
-						<image src="../../common/images/preview_small.webp" mode="aspectFill"></image>
+					<view class="box" v-for="item in randomList" :key="item._id" @click="goPreview">
+						<image :src="item.smallPicurl" mode="aspectFill"></image>
 					</view>
 				</scroll-view>
 			</view>
@@ -69,7 +64,7 @@
 				</template>
 			</common-title>
 			<view class="content">
-				<theme-item  v-for="item in 8"></theme-item>
+				<theme-item  v-for="item in classifyList" :item="item" :key="item._id"></theme-item>
 				<theme-item  :isMore="true"></theme-item>
 			</view>
 		</view>
@@ -78,7 +73,49 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
+import {apiGetBanner,apiGetDayRandom,apiGetNotice,apiGetClassify} from "@/api/apis.js";
+
+
+const goPreview = ()=>{
+	uni.navigateTo({
+		url: "/pages/preview/preview"
+	})
+}
 	
+
+const bannerList= ref([]);
+const randomList = ref([]);
+const noticeList = ref([]);
+const classifyList = ref([]);
+
+const getBanner = async ()=>{
+	let res =await apiGetBanner();	
+	bannerList.value = res.data;	
+}
+
+const getDayRandom = async ()=>{
+	let res =await apiGetDayRandom();
+	randomList.value = res.data	
+}
+
+const getNotice = async()=>{
+	let res =await apiGetNotice({select:true});
+	noticeList.value = res.data
+}
+
+const getClassify =async()=>{
+	let res =await apiGetClassify({
+		select:true
+	});
+	classifyList.value = res.data
+	console.log(res);
+}
+
+getBanner();
+getDayRandom();
+getNotice();
+getClassify();
 </script>
 
 <style lang="scss" scoped >
